@@ -2,7 +2,7 @@ let filmes = [];
 
 function adicionarItem() {
     const filmeInput = document.getElementById('filme');
-    const filme = itemInput.value;
+    const filme = filmeInput.value;
 
     const generoInput = document.getElementById('genero');
     const genero = generoInput.value;
@@ -10,19 +10,18 @@ function adicionarItem() {
     const classificacaoInput = document.getElementById('classificacao');
     const classificacao = classificacaoInput.value;
 
-    const sinapseInput = document.getElementById('sinapse');
-    const sinapse = sinapseInput.value;
+    const sinopseInput = document.getElementById('sinopse');
+    const sinopse = sinopseInput.value;
 
     const trailerInput = document.getElementById('trailer');
     const trailer = trailerInput.value;
 
-
-    if (filme) {
-        filmes.push([filme, genero, classificacao, sinapse, trailer]);
+    if (filme && genero && classificacao && sinopse && trailer) {
+        filmes.push({ filme, genero, classificacao, sinopse, trailer });
         filmeInput.value = '';
         generoInput.value = '';
         classificacaoInput.value = '';
-        sinapseInput.value = '';
+        sinopseInput.value = '';
         trailerInput.value = '';
 
         atualizarLista();
@@ -30,11 +29,35 @@ function adicionarItem() {
 }
 
 function atualizarLista() {
-    const tabelaFilme = document.getElementById('tabelaFilme');
+    const tabelaFilme = document.querySelector('#tabelaFilme tbody');
     tabelaFilme.innerHTML = '';
     filmes.forEach((filme, index) => {
         const tr = document.createElement('tr');
-        tr.Content = item;
+        
+        const tdFilme = document.createElement('td');
+        tdFilme.textContent = filme.filme;
+        tr.appendChild(tdFilme);
+        
+        const tdGenero = document.createElement('td');
+        tdGenero.textContent = filme.genero;
+        tr.appendChild(tdGenero);
+        
+        const tdClassificacao = document.createElement('td');
+        tdClassificacao.textContent = filme.classificacao;
+        tr.appendChild(tdClassificacao);
+        
+        const tdsinopse = document.createElement('td');
+        tdsinopse.textContent = filme.sinopse;
+        tr.appendChild(tdsinopse);
+        
+        const tdTrailer = document.createElement('td');
+        const link = document.createElement('a');
+        link.href = filme.trailer;
+        link.textContent = "Ver Trailer";
+        link.target = "_blank";
+        tdTrailer.appendChild(link);
+        tr.appendChild(tdTrailer);
+        
         tabelaFilme.appendChild(tr);
     });
 }

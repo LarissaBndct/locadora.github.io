@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teste</title>
+    <title>Locadora</title>
 </head>
 <body>
     <h1>Locadora</h1>
@@ -18,27 +18,27 @@
         <label for="classificacao">classificação: </label>
         <input type="text" name="classificacao" id="classificacao">
 
-        <label for="sinapse">sinapse: </label>
-        <input type="text" name="sinapse" id="sinapse">
+        <label for="sinopse">sinopse: </label>
+        <input type="text" name="sinopse" id="sinopse">
 
         <label for="trailer">link trailer: </label>
         <input type="text" name="trailer" id="trailer">
-    <button type="button" onclick="adicionarFilme">Adicionar</button>
+    <button type="button" onclick="adicionarItem()">Adicionar</button>
     </form>
 
     <h2>tabela de filmes</h2>
     <table border="1" id="tabelaFilme">
-        <tr>
-            <th>nome</th>
-            <th>tipo</th>
-            <th>classificação</th>
-            <th>sinapse</th>
-            <th>trailer</th>
-        </tr>
-        <tr id="filmeRow">
-            <td id="filmeData"></td>
-        </tr>
-
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Gênero</th>
+                <th>Classificação</th>
+                <th>Sinopse</th>
+                <th>Trailer</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
     </table>
     <script src="script.js"></script>
 </body>
