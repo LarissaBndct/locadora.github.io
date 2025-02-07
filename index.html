@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locadora</title>
+</head>
+<body>
+    <h1>Locadora</h1>
+    <h2>Adicionar filme</h2>
+    <form id="itemForm">
+        <label for="filme">nome: </label>
+        <input type="text" name="filme" id="filme">
+
+        <label for="genero">genero: </label>
+        <input type="text" name="genero" id="genero">
+
+        <label for="classificacao">classificação: </label>
+        <input type="text" name="classificacao" id="classificacao">
+
+        <label for="sinopse">sinopse: </label>
+        <input type="text" name="sinopse" id="sinopse">
+
+        <label for="trailer">link trailer: </label>
+        <input type="text" name="trailer" id="trailer">
+    <button type="button" onclick="adicionarItem()">Adicionar</button>
+    </form>
+
+    <h2>tabela de filmes</h2>
+    <table border="1" id="tabelaFilme">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Gênero</th>
+                <th>Classificação</th>
+                <th>Sinopse</th>
+                <th>Trailer</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
